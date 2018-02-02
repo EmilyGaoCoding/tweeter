@@ -6,7 +6,9 @@ module.exports = function makeDataHelpers(db) {
     
     // Saves a tweet to `db`
     saveTweet: function(newTweet, callback) {
+
       const tweets = db.collection('tweets');
+      
       tweets.find().toArray((err, results) => {
         if (err) throw err;
         tweets.insertOne(newTweet);

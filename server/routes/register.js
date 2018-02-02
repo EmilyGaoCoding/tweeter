@@ -1,34 +1,30 @@
-// "use strict";
+"use strict";
 
-// const express       = require('express');
-// const registerRoutes  = express.Router();
+const express       = require('express');
+const registerRoutes  = express.Router();
+const bcrypt = require('bcrypt');
 
-// module.exports = function() {
+module.exports = function(db) {
   
-//   registerRoutes.post("/", function(req, res) {
-//     if (!req.body.text) {
-//       res.status(400).json({ error: 'invalid request: no data in POST body'});
-//       return;
-//     }
+  registerRoutes.post("/", function(req, res) {
+    const users = db.collection('users');
+
+    users.find().toArray((err, results) => {
+
+      for (let i = 0; i < results.length; i++) {
+        if (bcrypt.compareSync(req.body.register, results[i].user_name)) {
+          return res.json({ body: 'username taken' });
+        };
+      }
+      
+      const user_name = bcrypt.hashSync(req.body.register, 10);
+      req.session.cookie = user_name;
+      users.insert({ 'user_name': user_name });
+      res.json({ body: 'username created' });
+    });
     
-//     const users = db.collection('users');
-//     users.find().toArray((err, results) => {
-//       if (err) throw err;
-      
-//       results.forEach(user => {
-//         if (user.user_name === req.body.text) {
-//           res.status(400).json({ body: 'Username already exists. Please log in or choose another username.'});
-//           return;
-//         }
-//       };
-      
-//       const user = {
-//         user_name: req.body.text
-//       }
-//       users.insertOne(user);
-//     });
-//   });
-
-// return registerRoutes;
-
-// }
+  });
+    
+  return registerRoutes;
+  
+}

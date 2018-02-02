@@ -1,7 +1,7 @@
 "use strict";
 
 // Defines helper functions for saving and getting tweets, using the database `db`
-module.exports = function isCookieValid(cookie) {
+module.exports = function isCookieValid(db, cookie) {
 
   const users = db.collection('users');
 

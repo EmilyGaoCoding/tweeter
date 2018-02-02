@@ -66,6 +66,22 @@ nav {
       nav .register-login form input[type="submit"] {
         padding-left: 0.3em; }
 
+.username-taken {
+  display: none;
+  background-color: rgba(199, 78, 78, 0.966);
+  color: white;
+  margin: 0 2em 1em 2em;
+  padding: 10px;
+  border-radius: 5px; }
+
+.username-created {
+  display: none;
+  background-color: mediumseagreen;
+  color: white;
+  margin: 0 2em 1em 2em;
+  padding: 10px;
+  border-radius: 5px; }
+
 .new-tweet {
   display: none;
   background-color: WhiteSmoke;
