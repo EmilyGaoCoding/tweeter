@@ -18,10 +18,9 @@ module.exports = function makeDataHelpers(db) {
     // Get all tweets in `db`, sorted by newest first
     getTweets: function(callback) {
       const tweets = db.collection('tweets');
-      tweets.find().toArray((err, results) => {
+      tweets.find().sort({created_at:1}).toArray((err, results) => {
         if (err) throw err;
-        const sortNewestFirst = (b, a) => a.created_at - b.created_at;
-        callback(null, results.sort(sortNewestFirst));
+        callback(null, results);
       });
       
     }

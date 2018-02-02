@@ -15,34 +15,56 @@ nav {
   height: 80px; }
   nav .logo {
     float: left;
-    margin-left: 8em;
-    width: 80px;
-    height: 80px; }
+    width: 7vw;
+    margin-left: 3em;
+    font-size: 4em;
+    color: ivory; }
   nav .header {
-    color: #e8fdff;
+    color: ivory;
     float: left;
-    margin-right: 2em;
-    margin-left: 10px;
     font-size: 2em;
     line-height: 80px; }
-  nav ul {
-    -webkit-appearance: none;
-    margin: 1.5em 0; }
-    nav ul li {
-      display: inline-block;
-      list-style: none; }
-    nav ul a {
+  nav .compose-logout {
+    display: none; }
+    nav .compose-logout ul {
+      -webkit-appearance: none;
+      float: right;
+      width: 40vw; }
+      nav .compose-logout ul li {
+        display: inline-block;
+        list-style: none; }
+    nav .compose-logout a {
       color: MediumSlateBlue;
-      background-color: #f3f2fd;
-      border: 1px solid black;
+      background-color: #fdfdff;
       border-radius: 5px;
       font-size: 1.5em;
       text-decoration: none;
-      margin-left: 15em;
-      margin-top: 2em;
-      padding: .5em; }
-      nav ul a:hover {
+      margin-top: 1.5em;
+      margin-right: .6em;
+      padding: .4em; }
+      nav .compose-logout a:hover {
         background-color: white; }
+  nav .register-login {
+    display: none; }
+    nav .register-login ul {
+      -webkit-appearance: none;
+      float: right;
+      width: 40vw; }
+      nav .register-login ul li {
+        display: inline-block;
+        list-style: none; }
+    nav .register-login ul {
+      margin-top: 0.1em; }
+    nav .register-login form {
+      color: MediumSlateBlue;
+      background-color: #fdfdff;
+      border-radius: 5px;
+      font-size: 1.5em;
+      text-decoration: none; }
+      nav .register-login form:hover {
+        background-color: white; }
+      nav .register-login form input[type="submit"] {
+        padding-left: 0.3em; }
 
 .new-tweet {
   display: none;

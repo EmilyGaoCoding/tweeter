@@ -1,4 +1,27 @@
 $menu: MediumSlateBlue;
+@mixin buttons {
+  color: $menu;
+  background-color: lighten($menu, 32.5%);
+  border-radius: 5px;
+  font-size: 1.5em;
+  text-decoration: none;
+  
+  &:hover {
+    background-color: white;
+  } 
+}
+@mixin lists {
+  ul {
+    -webkit-appearance: none;
+    float: right;
+    width: 40vw;
+    
+    li {
+      display: inline-block;
+      list-style: none;
+    }
+  }
+}
 
 nav {
   position: fixed;
@@ -9,41 +32,44 @@ nav {
   
   .logo {
     float: left;
-    margin-left: 8em;
-    width: 80px;
-    height: 80px;
+    width: 7vw;
+    margin-left: 3em;
+    font-size: 4em;
+    color: ivory;
   }
-
+  
   .header {
-    color: #e8fdff;
+    color: ivory;
     float: left;
-    margin-right: 2em;
-    margin-left: 10px;
     font-size: 2em;
     line-height: 80px;
   }
   
-  ul {
-    -webkit-appearance: none;
-    margin: 1.5em 0;
-    li {
-      display: inline-block;
-      list-style: none;
-    }
+  .compose-logout {
+    display: none;
+    @include lists;
     
     a {
-      color: $menu;
-      background-color: lighten($menu, 30%);
-      border: 1px solid darken($menu, 80%);
-      border-radius: 5px;
-      font-size: 1.5em;
-      text-decoration: none;
-      margin-left: 15em;
-      margin-top: 2em;
-      padding: .5em;
-      
-      &:hover {
-        background-color: white;
+      @include buttons;
+      margin-top: 1.5em;
+      margin-right: .6em;
+      padding: .4em;
+    }
+  }
+
+  .register-login {
+    display: none;
+    @include lists;
+
+    ul {
+      margin-top: 0.1em;
+    }
+
+    form {
+      @include buttons;
+
+      input[type="submit"] {
+        padding-left: 0.3em;
       }
     }
   }

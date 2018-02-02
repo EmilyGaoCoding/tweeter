@@ -12,7 +12,7 @@ $(document).ready(function() {
   
   loadTweets();
   
-  $('form').submit((event) => {
+  $('.new-tweet form').submit((event) => {
     event.preventDefault();
     const charLeft = Number($('.counter').text());
     if (charLeft == 140) {
@@ -82,7 +82,7 @@ $(document).ready(function() {
   }
 
   // Compose button behavior
-  $('nav a').click((event) => {
+  $('nav .compose').click((event) => {
     event.preventDefault();
     $('.new-tweet').slideToggle();
     $('.new-tweet textarea').focus();

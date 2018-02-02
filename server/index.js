@@ -1,17 +1,25 @@
 "use strict";
 
-// Basic express setup:
+// Basic express and dependencies setup:
 
 const PORT          = 8080;
 const express       = require("express");
-const bodyParser    = require("body-parser");
 const app           = express();
-
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-// connect to MongoDB
-const MongoClient = require('mongodb').MongoClient;
+const bodyParser    = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: true }));
+
+const cookieSession = require('cookie-session');
+app.use(cookieSession({
+  name: 'session',
+  keys: ['key1'],
+  maxAge: 24 * 60 * 60 * 1000
+}));
+
+const bcrypt = require('bcrypt');
+
+const MongoClient = require("mongodb").MongoClient;
 const MONGODB_URI = "mongodb://localhost:27017/tweeter";
 
 MongoClient.connect(MONGODB_URI, (err, db) => {
@@ -22,11 +30,14 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
   
   const DataHelpers = require("./lib/data-helpers.js")(db);
   const tweetsRoutes = require("./routes/tweets")(DataHelpers);
+  const navRoutes = require("./routes/nav")();
 
+  app.use("/nav", navRoutes);
   app.use("/tweets", tweetsRoutes);
+  // app.use("/register", registerRoutes);
+  // app.use("/login", loginRoutes);
 
   app.listen(PORT, () => {
     console.log("Example app listening on port " + PORT);
   });
-
-})
+});
