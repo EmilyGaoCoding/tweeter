@@ -61,27 +61,9 @@ nav {
       border-radius: 5px;
       font-size: 1.5em;
       text-decoration: none; }
-      nav .register-login form:hover {
-        background-color: white; }
       nav .register-login form input[type="submit"] {
         padding-left: 0.3em; }
 
-.username-taken {
-  display: none;
-  background-color: rgba(199, 78, 78, 0.966);
-  color: white;
-  margin: 0 2em 1em 2em;
-  padding: 10px;
-  border-radius: 5px; }
-
-.username-created {
-  display: none;
-  background-color: mediumseagreen;
-  color: white;
-  margin: 0 2em 1em 2em;
-  padding: 10px;
-  border-radius: 5px; }
-
 .new-tweet {
   display: none;
   background-color: WhiteSmoke;
@@ -108,22 +90,6 @@ nav {
 .red {
   color: rgba(211, 28, 28, 0.966); }
 
-.empty-tweet {
-  display: none;
-  background-color: rgba(199, 78, 78, 0.966);
-  color: white;
-  margin: 0 2em 1em 2em;
-  padding: 10px;
-  border-radius: 5px; }
-
-.long-tweet {
-  display: none;
-  background-color: rgba(199, 78, 78, 0.966);
-  color: white;
-  margin: 0 2em 1em 2em;
-  padding: 10px;
-  border-radius: 5px; }
-
 .new-tweet {
   display: none;
   background-color: WhiteSmoke;
@@ -149,22 +115,6 @@ nav {
 
 .red {
   color: rgba(211, 28, 28, 0.966); }
-
-.empty-tweet {
-  display: none;
-  background-color: rgba(199, 78, 78, 0.966);
-  color: white;
-  margin: 0 2em 1em 2em;
-  padding: 10px;
-  border-radius: 5px; }
-
-.long-tweet {
-  display: none;
-  background-color: rgba(199, 78, 78, 0.966);
-  color: white;
-  margin: 0 2em 1em 2em;
-  padding: 10px;
-  border-radius: 5px; }
 
 .tweets {
   display: grid;
@@ -219,5 +169,18 @@ main {
 
 .copyright {
   text-align: center; }
+
+.popup-msg {
+  display: none;
+  color: white;
+  margin: 0 2em 1em 2em;
+  padding: 10px;
+  border-radius: 5px; }
+
+.popup-red {
+  background-color: rgba(199, 78, 78, 0.966); }
+
+.popup-green {
+  background-color: mediumseagreen; }
 
 /*# sourceMappingURL=layout.css.map */

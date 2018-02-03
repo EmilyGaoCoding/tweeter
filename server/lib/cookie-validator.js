@@ -6,11 +6,15 @@ module.exports = function isCookieValid(db, cookie) {
   const users = db.collection('users');
 
   users.find().toArray((err, results) => {
-    results.forEach(result => {
-      if (result === cookie) {
+
+    for (let i = 0; i < results.length; i++) {
+      if (results[i] === cookie) {
         return true;
-      } return false;
-    });
-  })
+      }
+    }
+
+    return false;
+
+  });
     
 };

@@ -3,22 +3,25 @@
 
 <head>
   <title>Tweeter - Home Page</title>
-  
+
+  <!-- stylesheets -->
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,700,700i" rel="stylesheet">
-  
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-</head>
 
+</head>
 <body>
   
   <!-- Top nav bar (fixed) -->
   <nav>
+
+    <!-- nav left side -->
     <span class="logo"><i class="fab fa-twitter"></i></span>
     <span class="header">Tweeter</span>
     
+    <!-- nav compose/logout -->
     <div class="compose-logout">
       <ul>
         <li class="compose"><a href="#"><i class="far fa-edit"></i>compose</a></li>
@@ -26,6 +29,7 @@
       </ul>
     </div>
     
+    <!-- nav register/login -->
     <div class="register-login">
       <ul>
         <li>
@@ -35,7 +39,7 @@
           </form>
         </li> 
         <li>
-          <form class="login" action="/login" method="POST">
+          <form class="login">
             <input  type="submit" value="login">
             <input type="text" name="login" placeholder="username" required>
           </form>
@@ -50,15 +54,13 @@
     
     <main class="container">
       
-      <!-- New Tweet -->
-      <p class="empty-tweet">Write something before submitting.</p>
-      <p class="long-tweet">Oops, you wrote too much!</p>
-      <p class="username-taken">This username is already taken.</p>
-      <p class="username-created">Username successfully created</p>
+      <!-- popup message -->
+      <p class="popup-msg"></p>
       
+      <!-- new tweet -->
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets">
+        <form>
           <textarea name="text" placeholder="What are you humming about?"></textarea>
           <input type="submit" value="Tweet">
           <span class="counter">140</span>
@@ -69,12 +71,14 @@
       <section class="tweets">
       </section>
       
+      <!-- footer -->
       <footer class="copyright">&copy 2018 Emily Productions</footer>
       
     </main>
     
   </div>
   
+  <!-- scripts -->
   <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-count.js"></script>

@@ -16,22 +16,22 @@ $(document).ready(function() {
     event.preventDefault();
     const charLeft = Number($('.counter').text());
     if (charLeft == 140) {
-      $('.empty-tweet').slideDown(function() {
+      $('.popup-msg').text('Write something before submitting.').slideDown(function() {
         setTimeout(function() {
-          $('.empty-tweet').slideUp();
+          $('.popup-msg').slideUp();
         }, 5000);
       });
     } else if (charLeft < 0) {
-      $('.long-tweet').slideDown(function() {
+      $('.popup-msg').text('Oops, you wrote too much!').slideDown(function() {
         setTimeout(function() {
-          $('long-tweet').slideUp();
+          $('.popup-msg').slideUp();
         }, 5000);
       });
     } else {
       $.ajax({
         type: 'POST',
-        url: $('form').attr('action'),
-        data: $('form').serialize(),
+        url: '/tweets',
+        data: $('.new-tweet form textarea').serialize(),
         success: renderNewTweet
       });
     }

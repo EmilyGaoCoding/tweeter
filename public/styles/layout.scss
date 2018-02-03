@@ -19,17 +19,33 @@ body {
   color: #244751;
   background-color: #eee;
 }
- .wrapper {
-   display: grid;
-   grid-template-columns: 1fr 2fr 1fr;
- }
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
 
- main {
-   background-color: white;
-   padding-top: 110px;
-   grid-column-start: 2;
- }
+main {
+  background-color: white;
+  padding-top: 110px;
+  grid-column-start: 2;
+}
 
- .copyright {
-   text-align: center;
- }
+.copyright {
+  text-align: center;
+}
+
+.popup-msg {
+  display: none;
+  color: white;
+  margin: 0 2em 1em 2em;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.popup-red {
+  background-color: rgba(199, 78, 78, 0.966);  
+}
+
+.popup-green {
+  background-color: mediumseagreen;
+}
